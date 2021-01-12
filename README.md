@@ -17,14 +17,14 @@ The cache simulator takes 8 arguments in the following way:
 
 <BLOCKSIZE> <L1_SIZE> <L1_ASSOC> <L2_SIZE> <L2_ASSOC> <REPLACEMENT_POLICY> <INCLUSION_PROPERTY> <trace_file>
 
-o BLOCKSIZE: Positive integer. Block size in bytes. (Same block size for all caches in the memory hierarchy.)
-o L1_SIZE: Positive integer. L1 cache size in bytes.
-o L1_ASSOC: Positive integer. L1 set-associativity (1 is direct-mapped).
-o L2_SIZE: Positive integer. L2 cache size in bytes. L2_SIZE = 0 signifies that there is no L2 cache.
-o L2_ASSOC: Positive integer. L2 set-associativity (1 is direct-mapped).
-o REPLACEMENT_POLICY: Positive integer. 0 for LRU, 1 for PLRU, 2 for Optimal.
-o INCLUSION_PROPERTY: Positive integer. 0 for non-inclusive, 1 for inclusive.
-o trace_file: Character string. Full name of trace file including any extensions.
+BLOCKSIZE: Positive integer. Block size in bytes. (Same block size for all caches in the memory hierarchy.)\
+L1_SIZE: Positive integer. L1 cache size in bytes.\
+L1_ASSOC: Positive integer. L1 set-associativity (1 is direct-mapped).\
+L2_SIZE: Positive integer. L2 cache size in bytes. L2_SIZE = 0 signifies that there is no L2 cache.
+L2_ASSOC: Positive integer. L2 set-associativity (1 is direct-mapped).\
+REPLACEMENT_POLICY: Positive integer. 0 for LRU, 1 for PLRU, 2 for Optimal.\
+INCLUSION_PROPERTY: Positive integer. 0 for non-inclusive, 1 for inclusive.\
+trace_file: Character string. Full name of trace file including any extensions.\
 
 example :
 ```
@@ -106,9 +106,9 @@ The cache simulator takes 3 argument in the following way:
 <S> <N> <tracefile>
 ```
 
-o S: Scheduling Queue size
-o N: peak fetch and dispatch rate (issue rate will be up to N+1)
-o tracefile: Full name of trace file including any extensions.
+S: Scheduling Queue size
+N: peak fetch and dispatch rate (issue rate will be up to N+1)
+tracefile: Full name of trace file including any extensions.
 
 ```
 make
