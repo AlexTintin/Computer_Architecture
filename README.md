@@ -24,7 +24,7 @@ L2_SIZE: Positive integer. L2 cache size in bytes. L2_SIZE = 0 signifies that th
 L2_ASSOC: Positive integer. L2 set-associativity (1 is direct-mapped).\
 REPLACEMENT_POLICY: Positive integer. 0 for LRU, 1 for PLRU, 2 for Optimal.\
 INCLUSION_PROPERTY: Positive integer. 0 for non-inclusive, 1 for inclusive.\
-trace_file: Character string. Full name of trace file including any extensions.\
+trace_file: Character string. Full name of trace file including any extensions.
 
 example :
 ```
@@ -33,8 +33,8 @@ make
 sim_cache 32 8192 4 262144 8 0 0 gcc_trace_cache.txt
 ```
 
-the input should be of the following format:
-r|w <hex address>
+the input should be of the following format:\
+r|w hex_address
 
 “r” (read) indicates a load and “w” (write) indicates a store
 
@@ -53,32 +53,32 @@ To simulate a smith n-bit counter predictor the following arguments are needed:
 ```
 smith <B> <tracefile>
 ```
-o B: number of counter bits
+B: number of counter bits
 
 
 To simulate a bimodal predictor the following arguments are needed:
 ```
 bimodal <M2> <tracefile>
 ```
-o M2: number of PC bits to index the bimodal table.
+M2: number of PC bits to index the bimodal table.
 
 
 To simulate a gshare predictor the following arguments are needed:
 ```
 gshare <M1> <N> <tracefile>
 ```
-o M1: number of PC bits to index gshare table
-o N: number of global branch history register bits to index gshare table
+M1: number of PC bits to index gshare table\
+N: number of global branch history register bits to index gshare table
 
 To simulate a hybrid predictor the following arguments are needed:
 ```
 hybrid <K> <M1> <N> <M2> <tracefile>
 ```
-o K: number of PC bits to index chooser table
-o M1: number of PC bits to index gshare table
-o N: number of global branch history register bits to index gshare table
-o M2: number of PC bits used to index bimodal table.
-o tracefile: Character string. Full name of trace file including any extensions.
+K: number of PC bits to index chooser table\
+M1: number of PC bits to index gshare table\
+N: number of global branch history register bits to index gshare table\
+M2: number of PC bits used to index bimodal table\
+tracefile: Character string. Full name of trace file including any extensions.
 
 example :
 ```
@@ -87,10 +87,10 @@ make
 ./sim hybrid 8 14 10 5 gcc_trace_branch.txt
 ```
 
-the input should be of the following format:
-<hex branch PC> t|n
+the input should be of the following format:\
+hex_branch_PC t|n
 
-<hex branch PC> is the address of the branch instruction in memory.
+hex_branch_PC is the address of the branch instruction in memory.\
 “t” indicates the branch is actually taken and “n” indicates the branch is actually not-taken.
 
 ## Dynamic Instruction Scheduling
@@ -106,8 +106,8 @@ The cache simulator takes 3 argument in the following way:
 <S> <N> <tracefile>
 ```
 
-S: Scheduling Queue size
-N: peak fetch and dispatch rate (issue rate will be up to N+1)
+S: Scheduling Queue size\
+N: peak fetch and dispatch rate (issue rate will be up to N+1)\
 tracefile: Full name of trace file including any extensions.
 
 ```
@@ -118,14 +118,14 @@ make
 
 the input should be of the following format:
 
-<PC> <operation type> <dest reg #> <src1 reg #> <src2 reg #>
+PC operation_type <dest reg #> <src1 reg #> <src2 reg #>
 
-• <PC> is the program counter of the instruction (in hex).
-• <operation type> is either “0”, “1”, or “2”.
+• PC is the program counter of the instruction (in hex)\
+• operation_type is either “0”, “1”, or “2”\
 • <dest reg#> is the destination register of the instruction. If it is -1, then the instruction does
-not have a destination register. Otherwise, it is between 0 and 127.
+not have a destination register. Otherwise, it is between 0 and 127\
 • <src1 reg #> is the first source register of the instruction. If it is -1, then the instruction does
-not have a first source register. Otherwise, it is between 0 and 127.
+not have a first source register. Otherwise, it is between 0 and 127\
 • <src2 reg #> is the second source register of the instruction. If it is -1, then the instruction
 does not have a second source register. Otherwise, it is between 0 and 127.
 
