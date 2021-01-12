@@ -15,7 +15,9 @@ The write policy is WBWA (write back, write allocate)
 The makefile compile the necessary files.
 The cache simulator takes 8 arguments in the following way:
 
+```
 <BLOCKSIZE> <L1_SIZE> <L1_ASSOC> <L2_SIZE> <L2_ASSOC> <REPLACEMENT_POLICY> <INCLUSION_PROPERTY> <trace_file>
+```
 
 BLOCKSIZE: Positive integer. Block size in bytes. (Same block size for all caches in the memory hierarchy.)\
 L1_SIZE: Positive integer. L1 cache size in bytes.\
